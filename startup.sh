@@ -28,6 +28,10 @@ if [[ -n "$LOCUST_REMOTE_ARCHIVE" ]]; then
   tar -zxvf /locust.tgz
 fi
 
+if [[ -n "$LOCUST_TARGET_HOST" ]]; then
+  ARGS="$ARGS --host=$LOCUST_TARGET_HOST"
+fi
+
 if [[ -n "$LOCUST_TASKFILE" ]]; then
   if [[ -f $LOCUST_TASKFILE ]]; then
     echo "using $LOCUST_TASKFILE for tasks"
