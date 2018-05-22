@@ -1,7 +1,7 @@
 FROM python:2.7
 
 COPY setup*.sh /tmp/
-RUN bash /tmp/setup_chromedriver.sh
+RUN bash /tmp/setup_chromedriver.sh && rm -rf /tmp/*
 
 RUN pip install locustio pyzmq
 
