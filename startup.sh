@@ -52,4 +52,4 @@ fi
 
 echo "startup string: $LOCUST_BIN $ARGS"
 
-$LOCUST_BIN $ARGS
+su -c "$LOCUST_BIN $ARGS" locust
